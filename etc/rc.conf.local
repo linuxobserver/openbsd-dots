@@ -1,0 +1,2 @@
+apmd_flags=-A
+sndiod_flags=-s default -m play,mon -s mon

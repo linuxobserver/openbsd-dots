@@ -1,0 +1,30 @@
+add_newline = false
+
+# Replace the "❯" symbol in the prompt with "➟"
+[character]      # The name of the module we are configuring is "character"
+success_symbol = "[➜](bold green)"  # The "success_symbol" is set to "➜" with color "bold green"
+error_symbol = "  ✗"
+style_success = "bold #00A652"
+style_failure = "bold #df382c"
+
+# Hide the username. The username will only show in certain scenarios
+[username]
+disabled = true
+
+# shows the hostname on new lines
+[hostname]
+ssh_only = false
+format = "💻️ "
+# suffix = ">>"
+trim_at = ".companyname.com"
+disabled = false
+style = "bold italic #87A752"
+
+# Make prompt a single line instead of two lines
+[line_break]
+disabled = true
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+

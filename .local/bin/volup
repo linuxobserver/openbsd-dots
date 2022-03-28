@@ -1,0 +1,7 @@
+#!/bin/sh
+
+### FOR OpenBSD ###
+sndioctl output.level=+0.1 &
+VOL=$(sndioctl | grep output.level)
+
+notify-send -t 925 "$VOL"

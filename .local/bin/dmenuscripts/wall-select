@@ -1,0 +1,12 @@
+#!/bin/sh
+
+### FOR DMENU ###
+chosen=$( ls $HOME/Pictures/Wallpapers/ | dmenu -l 10)
+
+### FOR ROFI ###
+# chosen=$( ls $HOME/Pictures/Wallpapers/ | rofi -dmenu )
+
+# Exit if none chosen.
+[ -z "$chosen" ] && exit
+
+feh --no-fehbg --bg-scale "$HOME/Pictures/Wallpapers/$chosen"
