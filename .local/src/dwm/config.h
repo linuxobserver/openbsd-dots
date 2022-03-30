@@ -15,12 +15,12 @@ static int swallowfloating    = 1;        /* 1 means swallow floating windows by
 static int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static int showbar            = 0;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
-static char *fonts[]          = { "Monofur Nerd Font Mono:size=14", "Symbola:pixelsize=16:antialias=true:autohint=true"  };
+static char *fonts[]          = { "Spleen:size=14", "Symbola:pixelsize=16:antialias=true:autohint=true"  };
 static char normbgcolor[]           = "#302D41";
-static char normbordercolor[]       = "#444444";
+static char normbordercolor[]       = "#7d9fb3";
 static char normfgcolor[]           = "#D9E0EE";
 static char selfgcolor[]            = "#c0c0c0";
-static char selbordercolor[]        = "#89dceb";
+static char selbordercolor[]        = "#96cdfb";
 static char selbgcolor[]            = "#302D41";
 static char *colors[][3] = {
        /*               fg           bg           border   */
@@ -227,13 +227,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_F5,		spawn,          SHCMD("doas umount ~/.usb  && notify-send 'usb unmount' ") },
 	{ MODKEY,			XK_F6,		spawn,		SHCMD("st -e rec") },
 	{ MODKEY,			XK_F7,		spawn,		SHCMD("st -e killrec") },
-	{ MODKEY,			XK_F8,		spawn,		SHCMD("st -e | curl wttr.in/piraes") },
-	{ MODKEY,			XK_F10,		togglescratch,  {.ui = 4} },
-	{ MODKEY,			XK_F9,		togglescratch,  {.ui = 3} },
+	{ MODKEY,			XK_F8,		spawn,		SHCMD("st -e | curl wttr.in/piraeus") },
 	{ MODKEY,			XK_space,	zoom,		{0} },
 	{ MODKEY|ShiftMask,		XK_space,	togglefloating,	{0} },
-	{ MODKEY,			XK_Delete,	spawn,		SHCMD("strec") },
-	{ MODKEY,			XK_Scroll_Lock,	spawn,		SHCMD("killall screenkey || screenkey &") },
 
 };
 
@@ -241,16 +237,9 @@ static Key keys[] = {
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static Button buttons[] = {
 	/* click                event mask      button          function        argument */
-#ifndef __OpenBSD__
+#ifdef __OpenBSD__
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button1,        sigdwmblocks,   {.i = 1} },
-	{ ClkStatusText,        0,              Button2,        sigdwmblocks,   {.i = 2} },
-	{ ClkStatusText,        0,              Button3,        sigdwmblocks,   {.i = 3} },
-	{ ClkStatusText,        0,              Button4,        sigdwmblocks,   {.i = 4} },
-	{ ClkStatusText,        0,              Button5,        sigdwmblocks,   {.i = 5} },
-	{ ClkStatusText,        ShiftMask,      Button1,        sigdwmblocks,   {.i = 6} },
 #endif
-	{ ClkStatusText,        ShiftMask,      Button3,        spawn,          SHCMD(TERMINAL " -e vim ~/.local/src/dwmblocks/config.h") },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        defaultgaps,	{0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },

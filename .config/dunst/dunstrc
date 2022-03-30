@@ -12,7 +12,7 @@
 #----------------------------------------------------------------------------------
 
 [global]
-    font = Monofur Nerd Font Mono 14
+    font = Spleen 14 
     markup = yes
     format = "<b>%s</b>\n%b"
     sort = yes
@@ -45,7 +45,7 @@
 	corner_radius = 12
 	Class = Dunst
   
-frame_color = "#96CDFB"
+frame_color = "#96cdfb"
 separator_color= frame
 
 [urgency_low]
